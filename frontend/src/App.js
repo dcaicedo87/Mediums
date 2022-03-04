@@ -18,6 +18,7 @@ function App() {
         <Route path="/login">
           <LoginFormPage />
         </Route>
+        <Route>Splash Page</Route>
       </Switch>
     )
   );
