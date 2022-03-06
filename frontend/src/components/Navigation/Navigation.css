@@ -2,12 +2,35 @@
   display: flex;
   background-color: rgb(201, 234, 193);
   justify-content: space-between;
-  height: 3.2em;
+  height: 4vh;
   border-radius: 30px;
+  position: sticky;
+  top: 0;
+  /* align-items: center; */
 }
 
 .navigation-container-login-wrapper {
-  align-self: flex-end;
+  display: flex;
+  margin-right: 200px;
+}
+
+.profile-dropdown > li {
+  background-color: rgb(174, 197, 168);
+  font-size: 30px;
+  padding: 2px;
+}
+.profile-dropdown > li > button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #fff;
+  background: #ff5000;
+  line-height: 1.15;
+  font-size: 16px;
 }
 
 .navigation-container-icon-label-wrapper {
@@ -26,7 +49,7 @@ ul li {
 }
 
 ul li a {
-  padding: 0px 5px;
+  padding: 0px 10px;
   list-style-type: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;

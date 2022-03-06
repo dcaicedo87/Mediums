@@ -24,9 +24,9 @@ function Navigation({ isLoaded }) {
     <div className="navigation-container-wrapper">
       <div className="navigation-container-icon-label-wrapper">
         <div className="navigation-container-icon">
-          <i class="fa-solid fa-ghost fa-2x"></i>
+          <i className="fa-solid fa-ghost fa-2x"></i>
         </div>
-        <div classNam="navigation-container-label">
+        <div className="navigation-container-label">
           <h2>Mediums</h2>
         </div>
       </div>
