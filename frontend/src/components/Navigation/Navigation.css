@@ -1,0 +1,36 @@
+.navigation-container-wrapper {
+  display: flex;
+  background-color: rgb(201, 234, 193);
+  justify-content: space-between;
+  height: 3.2em;
+  border-radius: 30px;
+}
+
+.navigation-container-login-wrapper {
+  align-self: flex-end;
+}
+
+.navigation-container-icon-label-wrapper {
+  display: flex;
+  /* background-color: rgba(0, 204, 255, 0.5); */
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+/* .navigation-container-icon > i {
+  vertical-align: center;
+} */
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  padding: 0px 30px;
+}
+
+ul li a {
+  padding: 0px 5px;
+  list-style-type: none;
+}
