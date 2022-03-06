@@ -12,15 +12,10 @@
 
 .navigation-container-icon-label-wrapper {
   display: flex;
-  /* background-color: rgba(0, 204, 255, 0.5); */
   justify-content: center;
   align-items: center;
   width: 20%;
 }
-
-/* .navigation-container-icon > i {
-  vertical-align: center;
-} */
 
 ul {
   list-style-type: none;
@@ -33,4 +28,7 @@ ul li {
 ul li a {
   padding: 0px 5px;
   list-style-type: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-decoration: none;
 }
