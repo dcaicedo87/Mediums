@@ -14,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dcaicedo87/Solo-Project.git"
+    "url": "git+https://github.com/dcaicedo87/Mediums.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dcaicedo87/Solo-Project/issues"
+    "url": "https://github.com/dcaicedo87/Mediums/issues"
   },
-  "homepage": "https://github.com/dcaicedo87/Solo-Project#readme"
+  "homepage": "https://github.com/dcaicedo87/Mediums#readme"
 }
