@@ -1,0 +1,34 @@
+.navigation-container-wrapper {
+  display: flex;
+  background-color: rgb(201, 234, 193);
+  justify-content: space-between;
+  height: 3.2em;
+  border-radius: 30px;
+}
+
+.navigation-container-login-wrapper {
+  align-self: flex-end;
+}
+
+.navigation-container-icon-label-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  padding: 0px 30px;
+}
+
+ul li a {
+  padding: 0px 5px;
+  list-style-type: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-decoration: none;
+}

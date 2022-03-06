@@ -21,14 +21,26 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">
-          Home
-        </NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <div className="navigation-container-wrapper">
+      <div className="navigation-container-icon-label-wrapper">
+        <div className="navigation-container-icon">
+          <i class="fa-solid fa-ghost fa-2x"></i>
+        </div>
+        <div classNam="navigation-container-label">
+          <h2>Mediums</h2>
+        </div>
+      </div>
+      <div className="navigation-container-login-wrapper">
+        <ul>
+          <li>
+            <NavLink exact to="/">
+              Home
+            </NavLink>
+            {isLoaded && sessionLinks}
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 }
 
