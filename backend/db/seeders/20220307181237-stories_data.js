@@ -89,8 +89,8 @@ module.exports = {
         {
           authorId: 5,
           imageUrl:
-            "https://images.unsplash.com/photo-1612737920943-d927663dd4ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1162&q=80",
-          title: "Monsters Inside",
+            "https://images.unsplash.com/photo-1531167599833-609a45d3d903?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+          title: "Quiet Darkness",
           body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aspernatur unde velit earum quia ut eveniet cupiditate sit enim sint impedit fuga veniam atque minus ad aut exercitationem, ex labore officiis recusandae. Id porro possimus accusamus!",
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -98,8 +98,8 @@ module.exports = {
         {
           authorId: 1,
           imageUrl:
-            "https://images.unsplash.com/photo-1612737920943-d927663dd4ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1162&q=80",
-          title: "Monsters Inside",
+            "https://images.unsplash.com/photo-1506967534058-2dc0162a83d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+          title: "Calm Waters",
           body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aspernatur unde velit earum quia ut eveniet cupiditate sit enim sint impedit fuga veniam atque minus ad aut exercitationem, ex labore officiis recusandae. Id porro possimus accusamus!",
           createdAt: new Date(),
           updatedAt: new Date(),
