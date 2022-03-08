@@ -6,8 +6,8 @@ const { User, Story, Comment } = require("../../db/models");
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    const data = await Story.findAll({});
-    res.json({ data });
+    const data = await Story.findAll();
+    return res.json(data);
   })
 );
 
