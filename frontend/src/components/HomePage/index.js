@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getStories } from "../../store/stories";
+import "./homepage.css";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -21,14 +22,19 @@ const HomePage = () => {
 
   return (
     <>
-      <div>
-        <h1>EXAMPLE TEXT</h1>
+      <div className="stories-container">
         <ul>
-          {storiesArr.map((story) => (
+          {/* {storiesArr.map((story) => (
             <li key={story?.id}>
               <h3>{story?.title}</h3>
               <img src={`${story?.imageUrl}`} alt="storyPic" />
             </li>
+          ))} */}
+          {storiesArr.map((story) => (
+            <Link to="" key={story.id}>
+              <img src={`${story?.imageUrl}`} alt="storyPic" />
+              <h3>{story?.title}</h3>
+            </Link>
           ))}
         </ul>
       </div>

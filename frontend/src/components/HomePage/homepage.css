@@ -1,0 +1,18 @@
+.stories-container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+h3 {
+  /* min-width: 0; */
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+img {
+  max-width: 50vh;
+}
