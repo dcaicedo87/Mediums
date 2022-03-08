@@ -11,4 +11,22 @@ router.get(
   })
 );
 
+// POST a new story
+router.post(
+  "/",
+  asyncHandler(async (req, res) => {
+    const { authorId, imageUrl, title, body } = req.body;
+
+    const newStory = {
+      authorId,
+      imageUrl,
+      title,
+      body,
+    };
+
+    const storyData = await Story.create(newStory);
+    res.json(storyData);
+  })
+);
+
 module.exports = router;
