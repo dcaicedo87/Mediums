@@ -15,21 +15,21 @@ const HomePage = () => {
     dispatch(getStories());
   }, [dispatch]);
 
-  //   if (!stories) {
-  //     return null;
-  //   }
+  if (!stories) {
+    return null;
+  }
 
   return (
     <>
       <div>
         <h1>EXAMPLE TEXT</h1>
         <ul>
-          {storiesArr.map((story) => {
+          {storiesArr.map((story) => (
             <li key={story?.id}>
               <h3>{story?.title}</h3>
               <img src={`${story?.imageUrl}`} alt="storyPic" />
-            </li>;
-          })}
+            </li>
+          ))}
         </ul>
       </div>
     </>
