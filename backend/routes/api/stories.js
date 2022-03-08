@@ -29,4 +29,15 @@ router.post(
   })
 );
 
+router.get(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+
+    const singleStory = await Story.findByPk(id);
+
+    res.json({ singleStory });
+  })
+);
+
 module.exports = router;
