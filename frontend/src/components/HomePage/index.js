@@ -25,7 +25,11 @@ const HomePage = () => {
       <div className="stories-container">
         <ul>
           {storiesArr.map((story) => (
-            <Link to="" key={story.id} style={{ textDecoration: "none" }}>
+            <Link
+              to={`/stories/${story.id}`}
+              key={story.id}
+              style={{ textDecoration: "none" }}
+            >
               <img src={`${story?.imageUrl}`} alt="storyPic" />
               <h3>{story?.title}</h3>
             </Link>
