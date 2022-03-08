@@ -7,10 +7,10 @@ import "./homepage.css";
 const HomePage = () => {
   const dispatch = useDispatch();
   const stories = useSelector((state) => state.stories);
-  console.log(`STORE stories:`, stories);
+  //   console.log(`STORE stories:`, stories);
 
   const storiesArr = Object.values(stories);
-  console.log(`The StoriesArr:`, storiesArr);
+  //   console.log(`The StoriesArr:`, storiesArr);
 
   useEffect(() => {
     dispatch(getStories());
@@ -25,7 +25,11 @@ const HomePage = () => {
       <div className="stories-container">
         <ul>
           {storiesArr.map((story) => (
-            <Link to="" key={story.id} style={{ textDecoration: "none" }}>
+            <Link
+              to={`/stories/${story.id}`}
+              key={story.id}
+              style={{ textDecoration: "none" }}
+            >
               <img src={`${story?.imageUrl}`} alt="storyPic" />
               <h3>{story?.title}</h3>
             </Link>
