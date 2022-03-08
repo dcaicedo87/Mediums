@@ -7,10 +7,10 @@ import "./homepage.css";
 const HomePage = () => {
   const dispatch = useDispatch();
   const stories = useSelector((state) => state.stories);
-  console.log(`STORE stories:`, stories);
+  //   console.log(`STORE stories:`, stories);
 
   const storiesArr = Object.values(stories);
-  console.log(`The StoriesArr:`, storiesArr);
+  //   console.log(`The StoriesArr:`, storiesArr);
 
   useEffect(() => {
     dispatch(getStories());

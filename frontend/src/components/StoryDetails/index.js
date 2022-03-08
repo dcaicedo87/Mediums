@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getStories } from "../../store/stories";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import "./homepage.css";
 
 const StoryDetails = () => {
   const dispatch = useDispatch();
-  const stories = useSelector((state) => state.stories);
+  const stories = useSelector((state) => state.stories.stories);
   //   console.log(`STORE stories:`, stories);
 
   const storiesArr = Object.values(stories);
@@ -22,7 +22,7 @@ const StoryDetails = () => {
 
   return (
     <>
-      <div className="">
+      <div>
         <h2>You Have Landed</h2>
       </div>
     </>
