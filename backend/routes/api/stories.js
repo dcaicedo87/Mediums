@@ -6,7 +6,9 @@ const { User, Story, Comment } = require("../../db/models");
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    const data = await Story.findAll();
+    const data = await Story.findAll({
+      order: [["createdAt", "DESC"]],
+    });
     return res.json(data);
   })
 );
@@ -37,7 +39,7 @@ router.get(
 
     const singleStory = await Story.findByPk(id);
 
-    res.json({ singleStory });
+    res.json(singleStory);
   })
 );
 
