@@ -29,6 +29,7 @@ router.post(
   })
 );
 
+// GET a single story
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -37,6 +38,20 @@ router.get(
     const singleStory = await Story.findByPk(id);
 
     res.json({ singleStory });
+  })
+);
+
+// GET stories by authorId
+router.get(
+  "/author/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+
+    const authorStories = await Story.findAll({
+      where: { authorId: id },
+    });
+
+    res.json({ authorStories });
   })
 );
 
