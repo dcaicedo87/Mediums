@@ -26,10 +26,13 @@ const initialState = {
 const storiesReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD: {
-      return {
-        ...state,
-        stories: [...action.stories],
-      };
+      // return {
+      //   ...state,
+      //   stories: [...action.stories],
+      // };
+      const newState = {};
+      action.stories.forEach((story) => (newState[story.id] = story));
+      return newState;
     }
     default:
       return state;
