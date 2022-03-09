@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getStories, getUserStories } from "../../store/stories";
+import { Link } from "react-router-dom";
 import "./userstories.css";
 
 const UserStories = () => {
@@ -43,8 +44,20 @@ const UserStories = () => {
 
   return (
     <>
-      <div>
-        <h1>MY STORIES PAGE</h1>
+      <button>CREATE STORY</button>
+      <div className="stories-container">
+        <ul>
+          {authorSearch.map((story, i) => (
+            <Link
+              to={`/stories/${story.id}`}
+              key={"" + story.id}
+              style={{ textDecoration: "none" }}
+            >
+              <img src={`${story?.imageUrl}`} alt="storyPic" />
+              <h3>{story?.title}</h3>
+            </Link>
+          ))}
+        </ul>
       </div>
     </>
   );
