@@ -19,6 +19,7 @@ const StoryDetails = () => {
   const stories = useSelector((state) => state.stories);
   const storiesArr = Object.values(stories);
   // console.log(`The StoriesArr DETAILS:`, storiesArr);
+  console.log(`STORIES from useSelector:`, stories);
 
   const storySearch = storiesArr.find((story) => story.id.toString() === id);
   // console.log(`STORY SEARCH`, storySearch);

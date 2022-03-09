@@ -71,4 +71,17 @@ router.get(
   })
 );
 
+// DELETE stories
+router.delete(
+  "/:id",
+  asyncHandler(async function (req, res) {
+    const story = await Story.findByPk(req.params.id);
+    if (!story) throw new Error("Cannot find Story");
+
+    //can use req.params.id or story.id
+    await Story.destroy({ where: { id: req.params.id } });
+    return res.json({ id: story.id });
+  })
+);
+
 module.exports = router;

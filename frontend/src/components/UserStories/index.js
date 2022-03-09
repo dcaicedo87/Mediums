@@ -34,11 +34,12 @@ const UserStories = () => {
     return null;
   }
 
-  // const handleDelete = async (e) => {
-  //   e.preventDefault();
+  const handleDelete = async (e) => {
+    let storyId = e.target.id;
+    // console.log(storyId);
 
-  //   dispatch(deleteStory(story.id));
-  // };
+    dispatch(deleteStory(storyId));
+  };
 
   return (
     <>
@@ -59,7 +60,8 @@ const UserStories = () => {
             </Link>
             <button
               className="delete-story-button"
-              onclick={dispatch(deleteStory(story.id))}
+              id={story.id}
+              onClick={handleDelete}
             >
               DELETE
             </button>
