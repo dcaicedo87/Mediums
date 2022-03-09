@@ -8,6 +8,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import StoryDetails from "./components/StoryDetails";
+import UserStories from "./components/UserStories";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,10 +25,13 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          <Route path="/stories/author/:id">
+            <UserStories />
+          </Route>
           <Route path="/stories/:id">
             <StoryDetails />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <HomePage />
           </Route>
         </Switch>
