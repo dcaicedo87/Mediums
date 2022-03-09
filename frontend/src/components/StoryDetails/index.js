@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getStories } from "../../store/stories";
-// import { Link } from "react-router-dom";
-// import "./homepage.css";
+import "./storydetails.css";
 
 const StoryDetails = () => {
   const dispatch = useDispatch();
@@ -28,8 +27,10 @@ const StoryDetails = () => {
 
   return (
     <>
-      <div>
-        <h2>You Have Landed</h2>
+      <div className="story-details-container">
+        <img src={`${storySearch.imageUrl}`} alt="storyPic" />
+        <h1>{storySearch.title}</h1>
+        <p>{storySearch.body}</p>
       </div>
     </>
   );
