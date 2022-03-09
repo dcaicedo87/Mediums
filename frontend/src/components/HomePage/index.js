@@ -24,10 +24,10 @@ const HomePage = () => {
     <>
       <div className="stories-container">
         <ul>
-          {storiesArr.map((story) => (
+          {storiesArr.map((story, i) => (
             <Link
               to={`/stories/${story.id}`}
-              key={story.id}
+              key={"" + story.id}
               style={{ textDecoration: "none" }}
             >
               <img src={`${story?.imageUrl}`} alt="storyPic" />

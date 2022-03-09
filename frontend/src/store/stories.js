@@ -5,11 +5,11 @@ const load = (stories) => ({
   type: LOAD,
   stories,
 });
-console.log("LOAD IS HAPPENING", load);
+// console.log("LOAD IS HAPPENING", load);
 
 // GET stories THUNK
 export const getStories = () => async (dispatch) => {
-  console.log(`HITTING THE THUNK~~`);
+  // console.log(`HITTING THE THUNK~~`);
   const response = await fetch(`/api/stories`);
 
   if (response.ok) {

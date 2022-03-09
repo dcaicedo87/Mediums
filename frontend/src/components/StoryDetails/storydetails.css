@@ -1,0 +1,14 @@
+.story-details-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: rgba(131, 106, 214, 0.2);
+}
+
+.story-details-container > p {
+  font-size: 28px;
+}
