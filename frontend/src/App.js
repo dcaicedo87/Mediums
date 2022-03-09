@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import StoryDetails from "./components/StoryDetails";
 import UserStories from "./components/UserStories";
+import CreateStory from "./components/CreateStory";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,9 @@ function App() {
         <Switch>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/stories/create">
+            <CreateStory />
           </Route>
           <Route path="/stories/author/:id">
             <UserStories />
