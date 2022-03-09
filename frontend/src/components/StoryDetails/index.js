@@ -6,20 +6,22 @@ import "./storydetails.css";
 
 const StoryDetails = () => {
   const dispatch = useDispatch();
+  // const currentUser = useSelector((state) => state.session.user);
+  // console.log(`Current User`, currentUser);
 
   useEffect(() => {
     dispatch(getStories());
   }, [dispatch]);
 
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const stories = useSelector((state) => state.stories);
   const storiesArr = Object.values(stories);
-  console.log(`The StoriesArr DETAILS:`, storiesArr);
+  // console.log(`The StoriesArr DETAILS:`, storiesArr);
 
   const storySearch = storiesArr.find((story) => story.id.toString() === id);
-  console.log(`STORY SEARCH`, storySearch);
+  // console.log(`STORY SEARCH`, storySearch);
 
   if (!stories) {
     return null;

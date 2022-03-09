@@ -18,6 +18,17 @@ export const getStories = () => async (dispatch) => {
   }
 };
 
+// GET user stories
+export const getUserStories = (userId) => async (dispatch) => {
+  const response = await fetch(`/api/stories/author/${userId}`);
+
+  if (response.ok) {
+    const authorStories = await response.json();
+
+    dispatch(load(authorStories));
+  }
+};
+
 const initialState = {
   stories: [],
 };
