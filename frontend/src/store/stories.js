@@ -1,10 +1,24 @@
+import { csrfFetch } from "../store/csrf";
+
 const LOAD = "stories/LOAD";
-// const POST = "stories/POST";
+const POST = "stories/POST";
+const DELETE = "stories/DELETE";
 
 const load = (stories) => ({
   type: LOAD,
   stories,
 });
+
+const post = (story) => ({
+  type: POST,
+  story,
+});
+
+const remove = (storyId) => ({
+  type: DELETE,
+  storyId,
+});
+
 // console.log("LOAD IS HAPPENING", load);
 
 // GET stories THUNK
@@ -29,6 +43,29 @@ export const getUserStories = (userId) => async (dispatch) => {
   }
 };
 
+// POST user story
+export const postStory = (story) => async (dispatch) => {
+  const response = await csrfFetch(`/api/stories`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(story),
+  });
+  const newStory = await response.json();
+  dispatch(post(newStory));
+};
+
+//DELETE story
+export const deleteStory = (storyId) => async (dispatch) => {
+  const response = await fetch(`/api/stories/${storyId}`, {
+    method: "delete",
+  });
+
+  if (response.ok) {
+    const { id: deletedStoryId } = await response.json();
+    dispatch(remove(deletedStoryId));
+  }
+};
+
 const initialState = {
   stories: [],
 };
@@ -45,6 +82,16 @@ const storiesReducer = (state = initialState, action) => {
       action.stories.forEach((story) => (newState[story.id] = story));
       return newState;
     }
+    case POST: {
+      return {
+        ...state,
+        stories: [...state.stories, action.story],
+      };
+    }
+    case DELETE:
+      const newState = { ...state };
+      delete newState[action.story];
+      return newState;
     default:
       return state;
   }

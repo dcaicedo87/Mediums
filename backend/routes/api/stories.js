@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const asyncHandler = require("express-async-handler");
 const { User, Story, Comment } = require("../../db/models");
+const { check } = require("express-validator");
+const { handleValidationErrors } = require("../../utils/validation");
 
 // GET all stories
 router.get(
@@ -13,11 +15,23 @@ router.get(
   })
 );
 
+const validatePost = [
+  check("title")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a title."),
+  check("body")
+    .exists({ checkFalsy: true })
+    .isLength({ min: 4 })
+    .withMessage("Please provide a story with at least 4 characters."),
+  handleValidationErrors,
+];
+
 // POST a new story
 router.post(
   "/",
+  validatePost,
   asyncHandler(async (req, res) => {
-    const { authorId, imageUrl, title, body } = req.body;
+    const { authorId, imageUrl, title, body } = req.body.story;
 
     const newStory = {
       authorId,
@@ -26,8 +40,8 @@ router.post(
       body,
     };
 
-    const storyData = await Story.create(newStory);
-    res.json(storyData);
+    await Story.create(newStory);
+    res.json(newStory);
   })
 );
 

@@ -1,21 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getStories, getUserStories } from "../../store/stories";
+// import { useParams } from "react-router-dom";
+import { getStories } from "../../store/stories";
+import { Link } from "react-router-dom";
+import { deleteStory } from "../../store/stories";
+// import CreateStory from "../CreateStory";
 import "./userstories.css";
 
 const UserStories = () => {
   const dispatch = useDispatch();
-  //   const stories = useSelector((state) => state.stories);
-  //   console.log(`STORE stories:`, stories);
-
-  //   const storiesArr = Object.values(stories);
-  //   console.log(`The StoriesArr:`, storiesArr);
-
-  // const { id } = useParams();
-  // console.log(id);
-
-  //   console.log(`AUTHOR SEARCH`, authorSearch);
 
   const user = useSelector((state) => state.session.user);
 
@@ -41,10 +34,37 @@ const UserStories = () => {
     return null;
   }
 
+  // const handleDelete = async (e) => {
+  //   e.preventDefault();
+
+  //   dispatch(deleteStory(story.id));
+  // };
+
   return (
     <>
-      <div>
-        <h1>MY STORIES PAGE</h1>
+      <div className="mystories-container">
+        <button className="create-story-button">
+          <Link to="/stories/create">Create Story</Link>
+        </button>
+        {authorSearch.map((story, i) => (
+          <>
+            <button className="update-story-button">UPDATE</button>
+            <Link
+              to={`/stories/${story.id}`}
+              key={"" + story.id}
+              style={{ textDecoration: "none" }}
+            >
+              <img src={`${story?.imageUrl}`} alt="storyPic" />
+              <h3>{story?.title}</h3>
+            </Link>
+            <button
+              className="delete-story-button"
+              onclick={dispatch(deleteStory(story.id))}
+            >
+              DELETE
+            </button>
+          </>
+        ))}
       </div>
     </>
   );
