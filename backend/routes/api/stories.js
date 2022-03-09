@@ -31,7 +31,11 @@ router.post(
   "/",
   validatePost,
   asyncHandler(async (req, res) => {
-    const { authorId, imageUrl, title, body } = req.body.story;
+    const { authorId, imageUrl, title, body } = req.body;
+    console.log(`\n\n\n\n ${authorId} \n\n\n\n`);
+    console.log(`\n\n\n\n ${imageUrl} \n\n\n\n`);
+    console.log(`\n\n\n\n ${title} \n\n\n\n`);
+    console.log(`\n\n\n\n ${body} \n\n\n\n`);
 
     const newStory = {
       authorId,
