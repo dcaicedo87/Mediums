@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+// import { handleValidationErrors } from "../../../../backend/utils/validation";
 import { getStories, postStory } from "../../store/stories";
 
 const CreateStory = (stories) => {
@@ -23,6 +24,7 @@ const CreateStory = (stories) => {
   const [imageUrl, setImageUrl] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const updateImageUrl = (e) => setImageUrl(e.target.value);
   const updateTitle = (e) => setTitle(e.target.value);
@@ -37,6 +39,23 @@ const CreateStory = (stories) => {
       body,
     };
 
+    //error validation
+    setErrors([]);
+
+    const newErrors = [];
+
+    if (payload.body.length < 4) {
+      newErrors.push("Story must be more than 4 characters");
+    }
+    if (payload.title.length < 4) {
+      newErrors.push("Title must be more than 4 characters");
+    }
+
+    if (newErrors.lenght > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     dispatch(postStory(payload));
     history.push(`/stories/author/${userId}`);
   };
@@ -50,6 +69,13 @@ const CreateStory = (stories) => {
 
   return (
     <section className="new-form-holder centered middled">
+      <div className="Errors">
+        <ul>
+          {errors.map((err) => (
+            <li key={err}>{err}</li>
+          ))}
+        </ul>
+      </div>
       <form className="create-pokemon-form" onSubmit={handleSubmit}>
         {/* Author ID */}
         <input type="hidden" value={userId} />

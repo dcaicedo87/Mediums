@@ -34,11 +34,12 @@ const UserStories = () => {
     return null;
   }
 
-  // const handleDelete = async (e) => {
-  //   e.preventDefault();
+  const handleDelete = async (e) => {
+    let storyId = e.target.id;
+    // console.log(storyId);
 
-  //   dispatch(deleteStory(story.id));
-  // };
+    dispatch(deleteStory(storyId));
+  };
 
   return (
     <>
@@ -47,11 +48,10 @@ const UserStories = () => {
           <Link to="/stories/create">Create Story</Link>
         </button>
         {authorSearch.map((story, i) => (
-          <>
+          <div key={i}>
             <button className="update-story-button">UPDATE</button>
             <Link
               to={`/stories/${story.id}`}
-              key={"" + story.id}
               style={{ textDecoration: "none" }}
             >
               <img src={`${story?.imageUrl}`} alt="storyPic" />
@@ -59,11 +59,12 @@ const UserStories = () => {
             </Link>
             <button
               className="delete-story-button"
-              onclick={dispatch(deleteStory(story.id))}
+              id={story.id}
+              onClick={handleDelete}
             >
               DELETE
             </button>
-          </>
+          </div>
         ))}
       </div>
     </>

@@ -51,24 +51,23 @@ export const postStory = (story) => async (dispatch) => {
     body: JSON.stringify(story),
   });
   const newStory = await response.json();
+  if (newStory.errors) return newStory.errors;
   dispatch(post(newStory));
 };
 
 //DELETE story
 export const deleteStory = (storyId) => async (dispatch) => {
-  const response = await fetch(`/api/stories/${storyId}`, {
+  const response = await csrfFetch(`/api/stories/${storyId}`, {
     method: "delete",
   });
 
   if (response.ok) {
-    const { id: deletedStoryId } = await response.json();
-    dispatch(remove(deletedStoryId));
+    const deletedStory = await response.json();
+    dispatch(remove(deletedStory.id));
   }
 };
 
-const initialState = {
-  stories: [],
-};
+const initialState = {};
 
 // Stories Reducer
 const storiesReducer = (state = initialState, action) => {
@@ -85,12 +84,12 @@ const storiesReducer = (state = initialState, action) => {
     case POST: {
       return {
         ...state,
-        stories: [...state.stories, action.story],
+        [action.story.id]: action.story,
       };
     }
     case DELETE:
       const newState = { ...state };
-      delete newState[action.story];
+      delete newState[action.storyId];
       return newState;
     default:
       return state;
