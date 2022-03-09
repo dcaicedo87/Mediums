@@ -48,31 +48,23 @@ const UserStories = () => {
           <Link to="/stories/create">Create Story</Link>
         </button>
         {authorSearch.map((story, i) => (
-          <>
-            <button key={"upd" + story.id} className="update-story-button">
-              UPDATE
-            </button>
+          <div key={i}>
+            <button className="update-story-button">UPDATE</button>
             <Link
               to={`/stories/${story.id}`}
-              key={"" + story.id}
               style={{ textDecoration: "none" }}
             >
-              <img
-                key={"img" + story.id}
-                src={`${story?.imageUrl}`}
-                alt="storyPic"
-              />
-              <h3 key={"h3" + story.id}>{story?.title}</h3>
+              <img src={`${story?.imageUrl}`} alt="storyPic" />
+              <h3>{story?.title}</h3>
             </Link>
             <button
-              key={"del" + story.id}
               className="delete-story-button"
               id={story.id}
               onClick={handleDelete}
             >
               DELETE
             </button>
-          </>
+          </div>
         ))}
       </div>
     </>

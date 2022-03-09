@@ -51,6 +51,7 @@ export const postStory = (story) => async (dispatch) => {
     body: JSON.stringify(story),
   });
   const newStory = await response.json();
+  if (newStory.errors) return newStory.errors;
   dispatch(post(newStory));
 };
 
@@ -66,9 +67,7 @@ export const deleteStory = (storyId) => async (dispatch) => {
   }
 };
 
-const initialState = {
-  stories: [],
-};
+const initialState = {};
 
 // Stories Reducer
 const storiesReducer = (state = initialState, action) => {
@@ -85,7 +84,7 @@ const storiesReducer = (state = initialState, action) => {
     case POST: {
       return {
         ...state,
-        stories: [...state.stories, action.story],
+        [action.story.id]: action.story,
       };
     }
     case DELETE:
