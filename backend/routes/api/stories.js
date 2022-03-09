@@ -53,7 +53,7 @@ router.get(
       where: { authorId: id },
     });
 
-    res.json({ authorStories });
+    res.json(authorStories);
   })
 );
 
