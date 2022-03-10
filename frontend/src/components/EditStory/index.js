@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateIllusion } from "../../store/illusions";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function EditStory() {
   const dispatch = useDispatch();
@@ -16,20 +15,45 @@ function EditStory() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const updatedIllusion = {
-      id: illusion.id,
-      userId: sessionUser.id,
+    const updatedStory = {
+      id: story[storyId].id,
+      authorId: sessionUser.id,
+      imageUrl,
       title,
-      description,
+      body,
     };
 
-    dispatch(updateIllusion(updatedIllusion));
-    history.push("/explore/:");
+    //error validation
+    setErrors([]);
+
+    const newErrors = [];
+
+    if (payload.body.length < 4) {
+      newErrors.push("Story must be more than 4 characters");
+    }
+    if (payload.title.length < 4) {
+      newErrors.push("Title must be more than 4 characters");
+    }
+
+    if (newErrors.lenght > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    dispatch(updatedStory(updatedStory));
+    history.push("/stories/:id");
   };
 
   return (
     <section className="new-form-holder centered middled">
-      <form className="create-pokemon-form" onSubmit={handleSubmit}>
+      <div className="Errors">
+        <ul>
+          {errors.map((err) => (
+            <li key={err}>{err}</li>
+          ))}
+        </ul>
+      </div>
+      <form className="edit-story-form" onSubmit={handleSubmit}>
         {/* Author ID */}
         <input type="hidden" value={userId} />
         <input
@@ -57,7 +81,6 @@ function EditStory() {
         </button>
       </form>
     </section>
-  );
   );
 }
 

@@ -3,6 +3,7 @@ import { csrfFetch } from "../store/csrf";
 const LOAD = "stories/LOAD";
 const POST = "stories/POST";
 const DELETE = "stories/DELETE";
+const UPDATE = "stories/UPDATE";
 
 const load = (stories) => ({
   type: LOAD,
@@ -17,6 +18,11 @@ const post = (story) => ({
 const remove = (storyId) => ({
   type: DELETE,
   storyId,
+});
+
+const update = (story) => ({
+  type: UPDATE,
+  story,
 });
 
 // console.log("LOAD IS HAPPENING", load);
@@ -65,6 +71,18 @@ export const deleteStory = (storyId) => async (dispatch) => {
     const deletedStory = await response.json();
     dispatch(remove(deletedStory.id));
   }
+};
+
+// UPDATE story
+export const updateStory = (story) => async (dispatch) => {
+  const res = await csrfFetch("/api/stories/:id", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(story),
+  });
+  const updatedStory = await res.json();
+  dispatch(update(updatedStory));
+  return updatedStory;
 };
 
 const initialState = {};

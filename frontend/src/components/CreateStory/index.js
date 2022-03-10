@@ -76,7 +76,7 @@ const CreateStory = (stories) => {
           ))}
         </ul>
       </div>
-      <form className="create-pokemon-form" onSubmit={handleSubmit}>
+      <form className="create-story-form" onSubmit={handleSubmit}>
         {/* Author ID */}
         <input type="hidden" value={userId} />
         <input
