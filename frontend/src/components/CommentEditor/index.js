@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { getStories, postStory } from "../../store/stories";
+// import { getStories, postStory } from "../../store/stories";
+import { postComment } from "../../store/comments";
 
 const CommentEditor = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const CommentEditor = () => {
 
   const userId = user.id;
 
-  // if (!userId) return null;
+  //   if (!userId) return null;
 
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState([]);
@@ -51,6 +52,7 @@ const CommentEditor = () => {
     history.push(`/stories/${id}`);
   };
 
+  if (!userId) return null;
   //NEED TO ADD "onSubmit={function}" for <form> line
 
   return (
@@ -75,4 +77,4 @@ const CommentEditor = () => {
   );
 };
 
-export default CreateStory;
+export default CommentEditor;

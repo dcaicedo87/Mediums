@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleStory } from "../../store/stories";
+import CommentEditor from "../CommentEditor";
 import "./storydetails.css";
 
 const StoryDetails = () => {
@@ -45,6 +46,9 @@ const StoryDetails = () => {
               <p>{`created: ${comment.createdAt}`}</p>
             </div>
           ))}
+        </div>
+        <div>
+          <CommentEditor />
         </div>
       </div>
     </>
