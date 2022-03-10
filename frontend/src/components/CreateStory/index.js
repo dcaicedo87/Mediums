@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 // import { handleValidationErrors } from "../../../../backend/utils/validation";
@@ -30,6 +30,15 @@ const CreateStory = (stories) => {
   const updateTitle = (e) => setTitle(e.target.value);
   const updateBody = (e) => setBody(e.target.value);
 
+  useEffect(() => {
+    const validationErrors = [];
+    if (title.length < 4)
+      return validationErrors.push("Title must be more than 4 characters");
+    if (body.length < 4)
+      return validationErrors.push("Story must be more than 4 characters");
+    setErrors(validationErrors);
+  }, [title, body]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = {
@@ -40,21 +49,21 @@ const CreateStory = (stories) => {
     };
 
     //error validation
-    setErrors([]);
+    // setErrors([]);
 
-    const newErrors = [];
+    // const newErrors = [];
 
-    if (payload.body.length < 4) {
-      newErrors.push("Story must be more than 4 characters");
-    }
-    if (payload.title.length < 4) {
-      newErrors.push("Title must be more than 4 characters");
-    }
+    // if (payload.body.length < 4) {
+    //   newErrors.push("Story must be more than 4 characters");
+    // }
+    // if (payload.title.length < 4) {
+    //   newErrors.push("Title must be more than 4 characters");
+    // }
 
-    if (newErrors.lenght > 0) {
-      setErrors(newErrors);
-      return;
-    }
+    // if (newErrors.lenght > 0) {
+    //   setErrors(newErrors);
+    //   return;
+    // }
 
     dispatch(postStory(payload));
     history.push(`/stories/author/${userId}`);
@@ -89,6 +98,7 @@ const CreateStory = (stories) => {
           type="text"
           placeholder="Title"
           value={title}
+          min="4"
           onChange={updateTitle}
           required
         />

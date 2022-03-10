@@ -3,10 +3,22 @@ module.exports = (sequelize, DataTypes) => {
   const Story = sequelize.define(
     "Story",
     {
-      authorId: DataTypes.INTEGER,
+      authorId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
       imageUrl: DataTypes.STRING,
-      title: DataTypes.STRING,
-      body: DataTypes.TEXT,
+      title: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+        validate: {
+          len: [4, 100],
+        },
+      },
+      body: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
     },
     {}
   );
