@@ -91,19 +91,19 @@ const initialState = {};
 const storiesReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD: {
-      // return {
-      //   ...state,
-      //   stories: [...action.stories],
-      // };
       const newState = {};
       action.stories.forEach((story) => (newState[story.id] = story));
       return newState;
     }
     case POST: {
-      return {
-        ...state,
-        [action.story.id]: action.story,
-      };
+      const newState = { ...state };
+      newState[action.story?.id] = action.story;
+      return newState;
+    }
+    case UPDATE: {
+      const newState = { ...state };
+      newState[action.story?.id] = action.story;
+      return newState;
     }
     case DELETE:
       const newState = { ...state };
