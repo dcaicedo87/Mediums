@@ -7,9 +7,9 @@ router.post(
   "/",
   asyncHandler(async (req, res) => {
     const postComment = {
-      userId,
-      storyId,
-      body,
+      userId: req.body.userId,
+      storyId: req.body.storyId,
+      body: req.body.body,
     };
 
     await Comment.create(postComment);
