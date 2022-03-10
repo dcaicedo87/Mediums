@@ -1,22 +1,30 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { updateStory } from "../../../src/store/stories";
 
 function EditStory() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
-  const [imageUrl, setImageUrl] = useState("");
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-  const history = useHistory();
   const stories = useSelector((state) => state.stories);
+  const { id } = useParams();
+  const [imageUrl, setImageUrl] = useState(stories[id].imageUrl);
+  const [title, setTitle] = useState(stories[id].title);
+  const [body, setBody] = useState(stories[id].body);
+  const [errors, setErrors] = useState([]);
+  const history = useHistory();
+  console.log(stories);
+
+  const updateImageUrl = (e) => setImageUrl(e.target.value);
+  const updateTitle = (e) => setTitle(e.target.value);
+  const updateBody = (e) => setBody(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const updatedStory = {
-      id: story[storyId].id,
+      id: stories[id].id,
       authorId: sessionUser.id,
       imageUrl,
       title,
@@ -28,10 +36,10 @@ function EditStory() {
 
     const newErrors = [];
 
-    if (payload.body.length < 4) {
+    if (updatedStory.body.length < 4) {
       newErrors.push("Story must be more than 4 characters");
     }
-    if (payload.title.length < 4) {
+    if (updatedStory.title.length < 4) {
       newErrors.push("Title must be more than 4 characters");
     }
 
@@ -40,8 +48,13 @@ function EditStory() {
       return;
     }
 
-    dispatch(updatedStory(updatedStory));
-    history.push("/stories/:id");
+    dispatch(updateStory(updatedStory));
+    history.push(`/stories/${id}`);
+  };
+
+  const handleCancel = async (e) => {
+    e.preventDefault();
+    history.push(`/stories/author/${userId}`);
   };
 
   return (
@@ -64,14 +77,14 @@ function EditStory() {
         />
         <input
           type="text"
-          placeholder="Title"
+          placeholder="New Title"
           value={title}
           onChange={updateTitle}
           required
         />
         <textarea
           type="text"
-          placeholder="Story start.."
+          placeholder="New Story here..."
           value={body}
           onChange={updateBody}
         />
@@ -84,4 +97,4 @@ function EditStory() {
   );
 }
 
-export default EditIllusion;
+export default EditStory;

@@ -55,12 +55,14 @@ const UserStories = () => {
         </button>
         {authorSearch.map((story, i) => (
           <div key={i}>
-            <button className="update-story-button"></button>
+            <button className="update-story-button">
+              <Link to={`/stories/${story.id}/edit`}>Edit</Link>
+            </button>
             <Link
               to={`/stories/${story.id}`}
               style={{ textDecoration: "none" }}
             >
-              <img src={`${story?.imageUrl}`} alt="storyPic" />
+              {story ? <img src={`${story?.imageUrl}`} alt="storyPic" /> : null}
               <h3>{story?.title}</h3>
             </Link>
             <button

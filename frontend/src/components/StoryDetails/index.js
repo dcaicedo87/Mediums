@@ -31,9 +31,11 @@ const StoryDetails = () => {
   return (
     <>
       <div className="story-details-container">
-        <img src={`${storySearch.imageUrl}`} alt="storyPic" />
-        <h1>{storySearch.title}</h1>
-        <p>{storySearch.body}</p>
+        {storySearch ? (
+          <img src={`${storySearch.imageUrl}`} alt="storyPic" />
+        ) : null}
+        {storySearch ? <h1>{storySearch.title}</h1> : null}
+        {storySearch ? <p>{storySearch.body}</p> : null}
       </div>
     </>
   );

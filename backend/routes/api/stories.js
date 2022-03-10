@@ -18,7 +18,8 @@ router.get(
 const validatePost = [
   check("title")
     .exists({ checkFalsy: true })
-    .withMessage("Please provide a title."),
+    .isLength({ min: 4 })
+    .withMessage("Please provide a title that is longer than 4 characters."),
   check("body")
     .exists({ checkFalsy: true })
     .isLength({ min: 4 })
@@ -85,6 +86,43 @@ router.delete(
     //can use req.params.id or story.id
     await Story.destroy({ where: { id: req.params.id } });
     return res.json({ id: story.id });
+  })
+);
+
+const validateStoryPut = [
+  check("title")
+    .exists({ checkFalsy: true })
+    .isLength({ min: 4 })
+    .withMessage("Please provide a title that is longer than 4 characters."),
+  check("body")
+    .isLength({ min: 4 })
+    .exists({ checkFalsy: true })
+    .isLength({ min: 4 })
+    .withMessage("Please provide a story with at least 4 characters."),
+  handleValidationErrors,
+];
+
+router.put(
+  "/:id",
+  validateStoryPut,
+  asyncHandler(async (req, res) => {
+    console.log(`ROUTER.PUT PARAMS:`, req.params);
+    const storyId = parseInt(req.params.id);
+    const { imageUrl, title, body } = req.body;
+    const story = await Story.findOne({
+      where: {
+        id: storyId,
+      },
+    });
+
+    if (story) {
+      await story.update({
+        imageUrl,
+        title,
+        body,
+      });
+    }
+    return res.json(story);
   })
 );
 

@@ -10,6 +10,7 @@ import HomePage from "./components/HomePage";
 import StoryDetails from "./components/StoryDetails";
 import UserStories from "./components/UserStories";
 import CreateStory from "./components/CreateStory";
+import EditStory from "./components/EditStory";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,10 +33,12 @@ function App() {
           <Route path="/stories/author/:id">
             <UserStories />
           </Route>
+          <Route exact path="/stories/:id/edit">
+            <EditStory />
+          </Route>
           <Route path="/stories/:id">
             <StoryDetails />
           </Route>
-          {/* <Route path="/stories/:id/edit"></Route> */}
           <Route exact path="/">
             <HomePage />
           </Route>

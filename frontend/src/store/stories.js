@@ -75,7 +75,7 @@ export const deleteStory = (storyId) => async (dispatch) => {
 
 // UPDATE story
 export const updateStory = (story) => async (dispatch) => {
-  const res = await csrfFetch("/api/stories/:id", {
+  const res = await csrfFetch(`/api/stories/${story.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(story),
