@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getStories } from "../../store/stories";
+import { getStories, getSingleStory } from "../../store/stories";
 import "./storydetails.css";
 
 const StoryDetails = () => {
@@ -9,22 +9,23 @@ const StoryDetails = () => {
   // const currentUser = useSelector((state) => state.session.user);
   // console.log(`Current User`, currentUser);
 
-  useEffect(() => {
-    dispatch(getStories());
-  }, [dispatch]);
-
   const { id } = useParams();
   // console.log(id);
 
-  const stories = useSelector((state) => state.stories);
-  const storiesArr = Object.values(stories);
-  // console.log(`The StoriesArr DETAILS:`, storiesArr);
-  console.log(`STORIES from useSelector:`, stories);
+  useEffect(() => {
+    dispatch(getSingleStory(id));
+  }, [dispatch]);
 
-  const storySearch = storiesArr.find((story) => story.id.toString() === id);
-  // console.log(`STORY SEARCH`, storySearch);
+  const commentsObj = useSelector((state) => state.comments);
+  // console.log(`commentOBJ`, commentsObj);
 
-  if (!stories) {
+  const commentsArr = Object.values(commentsObj);
+  // console.log(`commentsArr`, commentsArr);
+
+  const storySearch = useSelector((state) => state.stories[id]);
+  // console.log(`StorySerach`, storySearch);
+
+  if (!storySearch) {
     return null;
   }
 
@@ -36,6 +37,14 @@ const StoryDetails = () => {
         ) : null}
         {storySearch ? <h1>{storySearch.title}</h1> : null}
         {storySearch ? <p>{storySearch.body}</p> : null}
+        <div className="comment-container">
+          {commentsArr.map((comment) => (
+            <div key={comment.id}>
+              <p>{comment.User.username}</p>
+              <p>{comment.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

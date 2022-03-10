@@ -4,6 +4,7 @@ const LOAD = "stories/LOAD";
 const POST = "stories/POST";
 const DELETE = "stories/DELETE";
 const UPDATE = "stories/UPDATE";
+const LOADONE = "comments/LOAD";
 
 const load = (stories) => ({
   type: LOAD,
@@ -25,6 +26,11 @@ const update = (story) => ({
   story,
 });
 
+const loadone = (payload) => ({
+  type: LOADONE,
+  payload,
+});
+
 // console.log("LOAD IS HAPPENING", load);
 
 // GET stories THUNK
@@ -35,6 +41,17 @@ export const getStories = () => async (dispatch) => {
   if (response.ok) {
     const stories = await response.json();
     dispatch(load(stories));
+  }
+};
+
+// GET single story
+export const getSingleStory = (storyId) => async (dispatch) => {
+  // console.log(`HITTING THE THUNK~~`);
+  const response = await fetch(`/api/stories/${storyId}`);
+
+  if (response.ok) {
+    const payload = await response.json();
+    dispatch(loadone(payload));
   }
 };
 
@@ -93,6 +110,11 @@ const storiesReducer = (state = initialState, action) => {
     case LOAD: {
       const newState = {};
       action.stories.forEach((story) => (newState[story.id] = story));
+      return newState;
+    }
+    case LOADONE: {
+      const newState = { ...state };
+      newState[action.payload.singleStory.id] = action.payload.singleStory;
       return newState;
     }
     case POST: {
