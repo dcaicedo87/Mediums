@@ -20,7 +20,7 @@ const StoryDetails = () => {
   // console.log(`commentOBJ`, commentsObj);
 
   const commentsArr = Object.values(commentsObj);
-  console.log(`commentsArr`, commentsArr);
+  // console.log(`commentsArr`, commentsArr);
 
   const storySearch = useSelector((state) => state.stories[id]);
   // console.log(`StorySerach`, storySearch);
