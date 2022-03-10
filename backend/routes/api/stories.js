@@ -9,6 +9,7 @@ router.get(
   "/",
   asyncHandler(async (req, res) => {
     const data = await Story.findAll({
+      include: [Comment, User],
       order: [["createdAt", "DESC"]],
     });
     return res.json(data);
@@ -57,8 +58,16 @@ router.get(
     const id = req.params.id;
 
     const singleStory = await Story.findByPk(id);
+    const comment = await Comment.findAll({
+      where: {
+        storyId: id,
+      },
+      include: {
+        model: User,
+      },
+    });
 
-    res.json(singleStory);
+    res.json({ singleStory, comment });
   })
 );
 

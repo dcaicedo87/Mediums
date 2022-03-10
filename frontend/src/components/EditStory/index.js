@@ -24,7 +24,7 @@ function EditStory() {
     e.preventDefault();
 
     const updatedStory = {
-      id: stories[id].id,
+      id: stories[id]?.id,
       authorId: sessionUser.id,
       imageUrl,
       title,
