@@ -43,7 +43,7 @@ function EditStory() {
       newErrors.push("Title must be more than 4 characters");
     }
 
-    if (newErrors.lenght > 0) {
+    if (newErrors.length > 0) {
       setErrors(newErrors);
       return;
     }
