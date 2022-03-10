@@ -88,7 +88,7 @@ function EditStory() {
           value={body}
           onChange={updateBody}
         />
-        <button type="submit">Create New Story</button>
+        <button type="submit">Accept</button>
         <button type="button" onClick={handleCancel}>
           Cancel
         </button>
