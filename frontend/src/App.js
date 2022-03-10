@@ -35,7 +35,7 @@ function App() {
           <Route path="/stories/:id">
             <StoryDetails />
           </Route>
-          <Route path="/stories/:id/edit"></Route>
+          {/* <Route path="/stories/:id/edit"></Route> */}
           <Route exact path="/">
             <HomePage />
           </Route>
