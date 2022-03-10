@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getStories, getSingleStory } from "../../store/stories";
+import { getSingleStory } from "../../store/stories";
 import "./storydetails.css";
 
 const StoryDetails = () => {
@@ -20,7 +20,7 @@ const StoryDetails = () => {
   // console.log(`commentOBJ`, commentsObj);
 
   const commentsArr = Object.values(commentsObj);
-  // console.log(`commentsArr`, commentsArr);
+  console.log(`commentsArr`, commentsArr);
 
   const storySearch = useSelector((state) => state.stories[id]);
   // console.log(`StorySerach`, storySearch);
@@ -42,6 +42,7 @@ const StoryDetails = () => {
             <div key={comment.id}>
               <p>{comment.User.username}</p>
               <p>{comment.body}</p>
+              <p>{`created: ${comment.createdAt}`}</p>
             </div>
           ))}
         </div>

@@ -17,15 +17,13 @@ router.post(
   })
 );
 
-// GET all comments
-router.get(
-  "/",
-  asyncHandler(async (req, res) => {
-    const data = await Story.findAll({
-      include: [Comment],
-    });
-    return res.json(data);
-  })
-);
+// GET all comments (for testing)
+// router.get(
+//   "/",
+//   asyncHandler(async (req, res) => {
+//     const data = await Comment.findAll();
+//     return res.json(data);
+//   })
+// );
 
 module.exports = router;
