@@ -23,6 +23,18 @@ router.post(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async function (req, res) {
+    const comment = await Comment.findByPk(req.params.id);
+    if (!comment) throw new Error("Cannot find Story");
+
+    //can use req.params.id or story.id
+    await comment.destroy();
+    return res.json(comment);
+  })
+);
+
 // GET all comments (for testing)
 // router.get(
 //   "/",
