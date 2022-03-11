@@ -93,7 +93,7 @@ router.delete(
     if (!story) throw new Error("Cannot find Story");
 
     //can use req.params.id or story.id
-    await Story.destroy({ where: { id: req.params.id } });
+    await story.destroy();
     return res.json({ id: story.id });
   })
 );
