@@ -6,6 +6,25 @@
   background-color: rgba(128, 128, 128, 0.5);
 }
 
+.my-stories-btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border-radius: 500px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(247, 0, 255, 0.335);
+}
+
+.profile-btn {
+  margin-left: 5px;
+}
+
 h3 {
   /* min-width: 0; */
   display: flex;

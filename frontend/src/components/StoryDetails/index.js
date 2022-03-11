@@ -57,6 +57,14 @@ const StoryDetails = () => {
     }
   };
 
+  const addCommentBtn = () => {
+    if (userVerificiationSet.has(currUserId)) {
+      return null;
+    } else {
+      return <div>{isLogged && <CommentEditor />}</div>;
+    }
+  };
+
   const handleDelete = async (e) => {
     let commentId = e.target.id;
     // console.log(commentId);
@@ -90,7 +98,7 @@ const StoryDetails = () => {
             </div>
           ))}
         </div>
-        <div>{isLogged && <CommentEditor />}</div>
+        {addCommentBtn()}
       </div>
     </>
   );

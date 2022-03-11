@@ -41,10 +41,10 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button>
+      <button className="my-stories-btn">
         <Link to={`/stories/author/${userId}`}>My Stories</Link>
       </button>
-      <button onClick={openMenu}>
+      <button className="profile-btn" onClick={openMenu}>
         <i className="fas fa-user-circle fa-2x" />
       </button>
       {showMenu && (
