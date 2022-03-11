@@ -51,7 +51,7 @@ const StoryDetails = () => {
           id={userComment?.id}
           onClick={handleDelete}
         >
-          DELETE
+          Delete My Comment
         </button>
       );
     }
@@ -81,15 +81,15 @@ const StoryDetails = () => {
         {storySearch ? <h1>{storySearch.title}</h1> : null}
         {storySearch ? <p>{storySearch.body}</p> : null}
         <div className="comment-container">
+          <div>{commentsButton()}</div>
           {commentsArr.map((comment) => (
             <div key={comment.id}>
-              <p>{comment.User.username}</p>
-              <p>{comment.body}</p>
-              <p>{`created: ${comment.createdAt}`}</p>
+              <p>{comment?.User?.username}</p>
+              <p>{comment?.body}</p>
+              <p>{`created: ${comment?.createdAt}`}</p>
             </div>
           ))}
         </div>
-        {commentsButton()}
         <div>{isLogged && <CommentEditor />}</div>
       </div>
     </>

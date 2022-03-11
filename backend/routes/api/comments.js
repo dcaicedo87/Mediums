@@ -15,11 +15,10 @@ router.post(
     const newComment = await Comment.create(postComment);
     console.log(newComment);
 
-    const commentToReturn = await Comment.findAll({
-      where: { id: newComment.id },
+    const commentToReturn = await Comment.findByPk(newComment.id, {
       include: User,
     });
-    return commentToReturn;
+    return res.json(commentToReturn);
   })
 );
 

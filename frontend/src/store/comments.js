@@ -14,9 +14,9 @@ const post = (payload) => ({
   payload,
 });
 
-const remove = (payload) => ({
+const remove = (id) => ({
   type: DELETE,
-  payload,
+  id,
 });
 
 // POST comment
@@ -27,9 +27,16 @@ export const postComment = (comment) => async (dispatch) => {
     body: JSON.stringify(comment),
   });
 
-  const newComment = await response.json();
+  console.log(`I GOT HERE AFTER THE FETCH`);
+  let newComment;
+  newComment = await response.json();
+  console.log(`newComment =`, newComment);
   if (newComment.errors) return newComment.errors;
-  dispatch(post(newComment));
+  if (newComment) {
+    console.log(`I got to the DISPATCH`);
+    dispatch(post(newComment));
+    return newComment;
+  }
 };
 
 //DELETE comment
@@ -46,7 +53,7 @@ export const deleteComment = (commentId) => async (dispatch) => {
 
 const initialState = {};
 
-export default function commentsReducer(state = initialState, action) {
+const commentsReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD: {
       const newState = {};
@@ -57,14 +64,16 @@ export default function commentsReducer(state = initialState, action) {
     }
     case POST: {
       const newState = { ...state };
-      newState[action.payload?.id] = action.comment;
+      newState[action.payload?.id] = action.payload;
       return newState;
     }
     case DELETE:
       const newState = { ...state };
-      delete newState[action.storyId];
+      delete newState[action.id];
       return newState;
     default:
       return state;
   }
-}
+};
+
+export default commentsReducer;
