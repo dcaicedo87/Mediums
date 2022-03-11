@@ -12,6 +12,7 @@ const StoryDetails = () => {
 
   const { id } = useParams();
   // console.log(id);
+  //
 
   useEffect(() => {
     dispatch(getSingleStory(id));
@@ -26,9 +27,11 @@ const StoryDetails = () => {
   const storySearch = useSelector((state) => state.stories[id]);
   // console.log(`StorySerach`, storySearch);
 
-  // if (!storySearch) {
-  //   return null;
-  // }
+  let isLogged = false;
+
+  if (currentUser) {
+    isLogged = true;
+  }
 
   return (
     <>
@@ -47,9 +50,7 @@ const StoryDetails = () => {
             </div>
           ))}
         </div>
-        <div>
-          <CommentEditor />
-        </div>
+        <div>{isLogged && <CommentEditor />}</div>
       </div>
     </>
   );
