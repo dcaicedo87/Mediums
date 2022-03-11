@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const asyncHandler = require("express-async-handler");
 const { Comment } = require("../../db/models");
+const { User } = require("../../db/models");
 
 // POST a comment
 router.post(
@@ -11,9 +12,14 @@ router.post(
       storyId: req.body.storyId,
       body: req.body.body,
     };
+    const newComment = await Comment.create(postComment);
+    console.log(newComment);
 
-    await Comment.create(postComment);
-    return res.json(postComment);
+    const commentToReturn = await Comment.findAll({
+      where: { id: newComment.id },
+      include: User,
+    });
+    return commentToReturn;
   })
 );
 
