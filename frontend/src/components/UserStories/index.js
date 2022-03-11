@@ -41,12 +41,12 @@ const UserStories = () => {
     dispatch(deleteStory(storyId));
   };
 
-  const handleUpdate = async (e) => {
-    let storyId = e.target.id;
-    // console.log(storyId);
+  // const handleUpdate = async (e) => {
+  //   let storyId = e.target.id;
+  //   // console.log(storyId);
 
-    dispatch(deleteStory(storyId));
-  };
+  //   dispatch(deleteStory(storyId));
+  // };
 
   return (
     <>
