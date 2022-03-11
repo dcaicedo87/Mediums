@@ -56,7 +56,9 @@ function LoginForm() {
       <button className="login-form-btn" type="submit">
         Log In
       </button>
-      <button onClick={handleSubmitDemo}>DEMO USER</button>
+      <button className="demo-form-btn" onClick={handleSubmitDemo}>
+        DEMO USER
+      </button>
     </form>
   );
 }
