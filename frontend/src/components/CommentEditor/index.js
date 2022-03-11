@@ -7,6 +7,7 @@ import { postComment } from "../../store/comments";
 const CommentEditor = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
+  console.log(`USER:`, user);
   const history = useHistory();
 
   // /stories/:id (in url)

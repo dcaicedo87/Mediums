@@ -7,8 +7,8 @@ import "./storydetails.css";
 
 const StoryDetails = () => {
   const dispatch = useDispatch();
-  // const currentUser = useSelector((state) => state.session.user);
-  // console.log(`Current User`, currentUser);
+  const currentUser = useSelector((state) => state.session.user);
+  console.log(`Current User`, currentUser);
 
   const { id } = useParams();
   // console.log(id);
@@ -26,9 +26,9 @@ const StoryDetails = () => {
   const storySearch = useSelector((state) => state.stories[id]);
   // console.log(`StorySerach`, storySearch);
 
-  if (!storySearch) {
-    return null;
-  }
+  // if (!storySearch) {
+  //   return null;
+  // }
 
   return (
     <>
