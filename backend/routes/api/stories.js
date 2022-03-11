@@ -94,7 +94,7 @@ router.delete(
 
     //can use req.params.id or story.id
     await story.destroy();
-    return res.json({ id: story.id });
+    return res.json(story);
   })
 );
 
