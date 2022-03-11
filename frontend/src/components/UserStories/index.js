@@ -40,6 +40,7 @@ const UserStories = () => {
 
     dispatch(deleteStory(storyId));
   };
+
   const handleUpdate = async (e) => {
     let storyId = e.target.id;
     // console.log(storyId);
