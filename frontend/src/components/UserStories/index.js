@@ -57,13 +57,13 @@ const UserStories = () => {
           </Link>
         </button>
         {authorSearch.map((story, i) => (
-          <div key={i}>
+          <div key={i} className="mystories-container-card">
             <Link
               to={`/stories/${story.id}`}
               style={{ textDecoration: "none" }}
             >
               {story ? <img src={`${story?.imageUrl}`} alt="storyPic" /> : null}
-              <h3>{story?.title}</h3>
+              <h3 className="mystories-container-card-title">{story?.title}</h3>
             </Link>
             <div className="edit-delete-btn-container">
               <button className="update-story-btn">

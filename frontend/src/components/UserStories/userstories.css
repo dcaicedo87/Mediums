@@ -3,7 +3,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  /* border: 1px solid black; */
 }
+
+/* .mystories-container-card {
+  border: 5px solid black;
+} */
 
 /* .create-story-button {
 } */
@@ -29,10 +34,16 @@
   text-decoration: none;
 }
 
+.mystories-container-card-title {
+  margin-bottom: 0;
+}
+
 .edit-delete-btn-container {
   display: flex;
   margin-bottom: 10%;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .update-story-btn {
@@ -49,6 +60,7 @@
   font-size: 16px;
   margin-top: 2%;
   margin-bottom: 2%;
+  width: 75px;
 }
 
 .delete-story-btn {
@@ -65,6 +77,7 @@
   font-size: 16px;
   margin-top: 2%;
   margin-bottom: 2%;
+  width: 120px;
 }
 
 .update-story-btn-link {
