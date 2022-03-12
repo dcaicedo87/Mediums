@@ -54,6 +54,11 @@
   width: 20%;
 }
 
+.profile-dropdown-label {
+  font-size: 8px;
+  color: rgb(76, 63, 255);
+}
+
 ul {
   list-style-type: none;
 }
