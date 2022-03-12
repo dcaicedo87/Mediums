@@ -58,9 +58,6 @@ const UserStories = () => {
         </button>
         {authorSearch.map((story, i) => (
           <div key={i}>
-            <button className="update-story-button">
-              <Link to={`/stories/${story.id}/edit`}>Edit</Link>
-            </button>
             <Link
               to={`/stories/${story.id}`}
               style={{ textDecoration: "none" }}
@@ -68,13 +65,23 @@ const UserStories = () => {
               {story ? <img src={`${story?.imageUrl}`} alt="storyPic" /> : null}
               <h3>{story?.title}</h3>
             </Link>
-            <button
-              className="delete-story-button"
-              id={story.id}
-              onClick={handleDelete}
-            >
-              DELETE
-            </button>
+            <div className="edit-delete-btn-container">
+              <button className="update-story-btn">
+                <Link
+                  className="update-story-btn-link"
+                  to={`/stories/${story.id}/edit`}
+                >
+                  Edit
+                </Link>
+              </button>
+              <button
+                className="delete-story-btn"
+                id={story.id}
+                onClick={handleDelete}
+              >
+                DELETE
+              </button>
+            </div>
           </div>
         ))}
       </div>

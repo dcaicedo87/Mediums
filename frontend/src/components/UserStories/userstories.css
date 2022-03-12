@@ -28,3 +28,45 @@
 .create-story-button-link {
   text-decoration: none;
 }
+
+.edit-delete-btn-container {
+  display: flex;
+  margin-bottom: 10%;
+  flex-direction: column;
+}
+
+.update-story-btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #fff;
+  background: #eeff00;
+  line-height: 1.15;
+  font-size: 16px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.delete-story-btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: rgb(255, 255, 255);
+  background: #ff0000;
+  line-height: 1.15;
+  font-size: 16px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.update-story-btn-link {
+  text-decoration: none;
+}
