@@ -86,15 +86,21 @@ const StoryDetails = () => {
         {storySearch ? (
           <img src={`${storySearch.imageUrl}`} alt="storyPic" />
         ) : null}
-        {storySearch ? <h1>{storySearch.title}</h1> : null}
-        {storySearch ? <p>{storySearch.body}</p> : null}
+        {storySearch ? (
+          <h1 className="story-details-title">{storySearch.title}</h1>
+        ) : null}
+        {storySearch ? (
+          <p className="story-details-body">{storySearch.body}</p>
+        ) : null}
         <div className="comment-container">
           <div>{commentsButton()}</div>
           {commentsArr.map((comment) => (
-            <div key={comment.id}>
-              <p>{comment?.User?.username}</p>
-              <p>{comment?.body}</p>
-              <p>{`created: ${comment?.createdAt}`}</p>
+            <div className="comment-container-info" key={comment.id}>
+              <p className="comment-container-info-username">
+                {comment?.User?.username}
+              </p>
+              <p className="comment-container-info-body">{comment?.body}</p>
+              <p className="comment-container-info-created">{`created: ${comment?.createdAt}`}</p>
             </div>
           ))}
         </div>
