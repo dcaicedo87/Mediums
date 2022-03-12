@@ -7,3 +7,24 @@
 
 /* .create-story-button {
 } */
+
+.create-story-button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #fff;
+  background: #00ff4c;
+  line-height: 1.15;
+  font-size: 16px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* text-decoration: none; */
+}
+
+.create-story-button-link {
+  text-decoration: none;
+}

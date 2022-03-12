@@ -3,7 +3,11 @@
   /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgba(128, 128, 128, 0.5);
+  /* background-color: rgba(128, 128, 128, 0.5); */
+}
+
+.stories-container > ul {
+  padding: 0;
 }
 
 .my-stories-btn {
@@ -34,4 +38,5 @@ h3 {
 
 img {
   max-width: 50vh;
+  border-radius: 20px;
 }

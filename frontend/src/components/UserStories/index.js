@@ -52,7 +52,9 @@ const UserStories = () => {
     <>
       <div className="mystories-container">
         <button className="create-story-button">
-          <Link to="/stories/create">Create Story</Link>
+          <Link className="create-story-button-link" to="/stories/create">
+            Create Story
+          </Link>
         </button>
         {authorSearch.map((story, i) => (
           <div key={i}>
