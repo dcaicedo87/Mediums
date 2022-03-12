@@ -3,3 +3,8 @@
   background-color: rgba(128, 128, 128, 0.5);
   /* height: 100vh; */
 }
+
+img {
+  width: 500px;
+  height: 500px;
+}

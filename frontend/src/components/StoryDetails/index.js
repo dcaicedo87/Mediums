@@ -83,9 +83,15 @@ const StoryDetails = () => {
   return (
     <>
       <div className="story-details-container">
-        {storySearch ? (
-          <img src={`${storySearch.imageUrl}`} alt="storyPic" />
-        ) : null}
+        <div className="story-details-img-container">
+          {storySearch ? (
+            <img
+              className="story-details-img"
+              src={`${storySearch.imageUrl}`}
+              alt="storyPic"
+            />
+          ) : null}
+        </div>
         {storySearch ? (
           <h1 className="story-details-title">{storySearch.title}</h1>
         ) : null}
@@ -100,7 +106,7 @@ const StoryDetails = () => {
                 {comment?.User?.username}
               </p>
               <p className="comment-container-info-body">{comment?.body}</p>
-              <p className="comment-container-info-created">{`created: ${comment?.createdAt}`}</p>
+              <p className="comment-container-info-created">{`Created: ${comment?.createdAt}`}</p>
             </div>
           ))}
         </div>
