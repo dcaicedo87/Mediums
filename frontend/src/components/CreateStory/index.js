@@ -45,11 +45,11 @@ const CreateStory = (stories) => {
 
     const newErrors = [];
 
-    if (payload.body.length < 4) {
-      newErrors.push("Story must be more than 4 characters");
-    }
     if (payload.title.length < 4) {
       newErrors.push("Title must be more than 4 characters");
+    }
+    if (payload.body.length < 4) {
+      newErrors.push("Story must be more than 4 characters");
     }
 
     if (newErrors.length > 0) {
@@ -70,8 +70,8 @@ const CreateStory = (stories) => {
 
   return (
     <div className="create-story-form-container">
-      <div className="Errors">
-        <ul>
+      <div>
+        <ul className="errors-create-form">
           {errors.map((err) => (
             <li key={err}>{err}</li>
           ))}

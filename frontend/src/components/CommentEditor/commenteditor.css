@@ -9,6 +9,13 @@
   font-size: 18px;
 }
 
+.errors {
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
 .create-comment-btn {
   display: inline-block;
   outline: none;
