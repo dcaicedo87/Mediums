@@ -31,7 +31,7 @@ const HomePage = () => {
               style={{ textDecoration: "none" }}
             >
               <img src={`${story?.imageUrl}`} alt="storyPic" />
-              <h3>{story?.title}</h3>
+              <p className="stories-title">{story?.title}</p>
             </Link>
           ))}
         </ul>
