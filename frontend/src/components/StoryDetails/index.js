@@ -47,7 +47,7 @@ const StoryDetails = () => {
       }
       return (
         <button
-          className="delete-story-button"
+          className="delete-comment-button"
           id={userComment?.id}
           onClick={handleDelete}
         >
