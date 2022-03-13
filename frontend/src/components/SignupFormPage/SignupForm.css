@@ -8,6 +8,11 @@
   background-color: rgba(204, 191, 208, 0.25);
 }
 
+.signup-form-validators {
+  background-color: white;
+  border-radius: 20px;
+}
+
 .signup-form > label {
   text-align: center;
   font-size: 50px;

@@ -59,7 +59,7 @@ const CommentEditor = () => {
 
   return (
     <section className="new-comment-container">
-      <div className="Errors">
+      <div className="errors">
         <ul>
           {errors.map((err) => (
             <li key={err}>{err}</li>

@@ -60,8 +60,8 @@ function EditStory() {
 
   return (
     <section className="edit-story-form-container">
-      <div className="Errors">
-        <ul>
+      <div>
+        <ul className="edit-story-errors">
           {errors.map((err) => (
             <li key={err}>{err}</li>
           ))}
