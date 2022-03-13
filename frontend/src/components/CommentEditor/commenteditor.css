@@ -1,0 +1,9 @@
+.create-comment-form {
+  display: flex;
+}
+.create-comment-form > textarea {
+  /* resize: none; */
+  width: 550px;
+  height: 50px;
+  font-size: 18px;
+}

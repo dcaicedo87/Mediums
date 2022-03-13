@@ -11,7 +11,7 @@
   margin-left: 30%;
   margin-right: 30%;
   background-color: rgba(131, 106, 214, 0.2);
-  height: 100vh;
+  height: 110vh;
   /* overflow: hidden; */
 }
 
@@ -52,16 +52,25 @@
   /* width: 100%; */
 }
 
+.comment-container-info-body {
+}
+
 .comment-container-info-username {
   /* margin-bottom: 5px; */
   margin: 0;
   font-weight: bold;
-  font-size: large;
+  font-size: 20px;
   border-bottom: 1px solid black;
 }
 
 .comment-container-info-created {
   margin: 0;
+  font-size: 14px;
   border-top: 1px solid black;
   text-align: right;
+}
+
+.comment-editor-container {
+  /* width: 200px; */
+  /* margin-bottom: 200px; */
 }
