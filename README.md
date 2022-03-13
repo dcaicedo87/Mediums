@@ -4,7 +4,7 @@ This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums
 
 # Index
 
-| [Mediums MVP](https://github.com/dcaicedo87/Mediums/wiki/MVP-Feature-List) | [Database Schema](https://github.com/dcaicedo87/Mediums/wiki/Database-Schema)
+| [Mediums MVP](https://github.com/dcaicedo87/Mediums/wiki/MVP-Feature-List) | [Database Schema](https://github.com/dcaicedo87/Mediums/wiki/Database-Schema) |
 
 # Technologies Used
 
