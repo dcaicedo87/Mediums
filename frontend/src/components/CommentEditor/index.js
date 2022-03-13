@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 // import { getStories, postStory } from "../../store/stories";
 import { postComment } from "../../store/comments";
+import "./commenteditor.css";
 
 const CommentEditor = () => {
   const dispatch = useDispatch();
@@ -72,7 +73,9 @@ const CommentEditor = () => {
           value={body}
           onChange={updateBody}
         />
-        <button type="submit">Create Comment</button>
+        <button className="create-comment-btn" type="submit">
+          Create Comment
+        </button>
       </form>
     </section>
   );
