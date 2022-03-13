@@ -37,7 +37,7 @@ const CommentEditor = () => {
     const newErrors = [];
 
     if (payload.body.length < 4) {
-      newErrors.push("Comment must be more than 4 characters");
+      newErrors.push("Comment must be more 4 characters or more");
     }
 
     if (newErrors.length > 0) {

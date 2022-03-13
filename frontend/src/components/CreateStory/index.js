@@ -46,10 +46,10 @@ const CreateStory = (stories) => {
     const newErrors = [];
 
     if (payload.title.length < 4) {
-      newErrors.push("Title must be more than 4 characters");
+      newErrors.push("Title must be 4 characters or more");
     }
     if (payload.body.length < 4) {
-      newErrors.push("Story must be more than 4 characters");
+      newErrors.push("Story must be 4 characters or more");
     }
 
     if (newErrors.length > 0) {
