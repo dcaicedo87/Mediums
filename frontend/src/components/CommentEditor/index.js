@@ -76,6 +76,9 @@ const CommentEditor = () => {
         <button className="create-comment-btn" type="submit">
           Create Comment
         </button>
+        {/* <div className="create-comment-spacer">
+          <div className="create-comment-empty-space"></div>
+        </div> */}
       </form>
     </section>
   );

@@ -7,13 +7,28 @@
   /* width: 5000%; */
   height: 50px;
   font-size: 18px;
+  /* margin-bottom: 5%; */
 }
+
+/* .create-comment-spacer {
+  width: 100%;
+} */
+
+/* .create-comment-empty-space {
+  margin: 10%;
+  margin-top: 5%;
+  width: 100%;
+} */
 
 .errors {
   background-color: white;
   border-radius: 20px;
   width: 100%;
   max-width: 400px;
+}
+
+.create-comment-spacer {
+  margin: 0;
 }
 
 .create-comment-btn {

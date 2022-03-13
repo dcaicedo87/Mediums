@@ -106,7 +106,7 @@ const StoryDetails = () => {
                 {comment?.User?.username}
               </p>
               <p className="comment-container-info-body">{comment?.body}</p>
-              <p className="comment-container-info-created">{`Created: ${comment?.createdAt}`}</p>
+              {/* <p className="comment-container-info-created">{`Created: ${comment?.createdAt}`}</p> */}
             </div>
           ))}
         </div>
