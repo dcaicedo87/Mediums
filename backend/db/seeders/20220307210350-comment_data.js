@@ -22,7 +22,7 @@ module.exports = {
         {
           userId: 3,
           storyId: 2,
-          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque soluta illo ipsa. Voluptatum nam, corrupti repellendus doloremque natus quia sequi illo, necessitatibus porro, velit odio.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -43,7 +43,7 @@ module.exports = {
         {
           userId: 1,
           storyId: 3,
-          body: "Lorem ipsum dolor sit amet consectetur.",
+          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque soluta illo ipsa. Voluptatum nam, corrupti repellendus doloremque natus quia sequi illo, necessitatibus porro, velit odio.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -57,7 +57,7 @@ module.exports = {
         {
           userId: 3,
           storyId: 4,
-          body: "Lorem ipsum dolor sit amet consectetur.",
+          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque soluta illo ipsa. Voluptatum nam, corrupti repellendus doloremque natus quia sequi illo, necessitatibus porro, velit odio.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -85,7 +85,7 @@ module.exports = {
         {
           userId: 2,
           storyId: 6,
-          body: "Lorem ipsum dolor sit amet.",
+          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque soluta illo ipsa. Voluptatum nam, corrupti repellendus doloremque natus quia sequi illo, necessitatibus porro, velit odio.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -106,7 +106,7 @@ module.exports = {
         {
           userId: 5,
           storyId: 8,
-          body: "Lorem ipsum dolor sit amet.",
+          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque soluta illo ipsa. Voluptatum nam, corrupti repellendus doloremque natus quia sequi illo, necessitatibus porro, velit odio.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -120,7 +120,7 @@ module.exports = {
         {
           userId: 3,
           storyId: 9,
-          body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque soluta illo ipsa. Voluptatum nam, corrupti repellendus doloremque natus quia sequi illo, necessitatibus porro, velit odio.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -141,7 +141,7 @@ module.exports = {
         {
           userId: 5,
           storyId: 10,
-          body: "Lorem ipsum dolor sit amet.",
+          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque soluta illo ipsa. Voluptatum nam, corrupti repellendus doloremque natus quia sequi illo, necessitatibus porro, velit odio.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
