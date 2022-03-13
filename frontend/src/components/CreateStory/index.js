@@ -81,14 +81,12 @@ const CreateStory = (stories) => {
         {/* Author ID */}
         <input type="hidden" value={userId} />
         <label className="create-story-form-main-label">Create a Story</label>
-        <label>Image Url</label>
         <input
           type="text"
           placeholder="Image URL"
           value={imageUrl}
           onChange={updateImageUrl}
         />
-        <label>Title</label>
         <input
           type="text"
           placeholder="Title"
@@ -97,7 +95,6 @@ const CreateStory = (stories) => {
           onChange={updateTitle}
           required
         />
-        <label>Story</label>
         <textarea
           type="text"
           placeholder="Story here.."
