@@ -73,7 +73,9 @@ const CommentEditor = () => {
           value={body}
           onChange={updateBody}
         />
-        <button type="submit">Create Comment</button>
+        <button className="create-comment-btn" type="submit">
+          Create Comment
+        </button>
       </form>
     </section>
   );
