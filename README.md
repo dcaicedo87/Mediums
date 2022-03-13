@@ -30,6 +30,8 @@ This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums
 
 3.  Create a POSTGRESQL user with CREATEDB and PASSWORD in PSQL.
 
+    - `CREATE USER <name> WITH CREATEDB PASSWORD <'password'>`
+
 4.  Create a .env file in the backend directory based on the .env.example found within the respective directory.
 
 5.  Enter your username and paassword information into your .env file along with your desired database name, a secured combination of characters for your JWT_SECRET, and your design PORT (preferably 5000).
