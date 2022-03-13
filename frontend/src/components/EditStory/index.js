@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { updateStory } from "../../../src/store/stories";
+import "./editstory.css";
 
 function EditStory() {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ function EditStory() {
   };
 
   return (
-    <section className="new-form-holder centered middled">
+    <section className="edit-story-form-container">
       <div className="Errors">
         <ul>
           {errors.map((err) => (
@@ -69,6 +70,7 @@ function EditStory() {
       <form className="edit-story-form" onSubmit={handleSubmit}>
         {/* Author ID */}
         <input type="hidden" value={userId} />
+        <label>Edit Story</label>
         <input
           type="text"
           placeholder="Image URL"
@@ -88,8 +90,14 @@ function EditStory() {
           value={body}
           onChange={updateBody}
         />
-        <button type="submit">Accept</button>
-        <button type="button" onClick={handleCancel}>
+        <button className="edit-story-btn" type="submit">
+          Accept
+        </button>
+        <button
+          className="cancel-edit-btn"
+          type="button"
+          onClick={handleCancel}
+        >
           Cancel
         </button>
       </form>
