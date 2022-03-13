@@ -46,7 +46,7 @@ This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums
 
 8.  Start the services in the backend directory.
 
-    - npm start
+    - `npm start`
 
 9.  Start the services in the frontend directory, which should open the project in your default browser. If not, navigate to [http://localhost:3000](http://localhost:3000).
 
