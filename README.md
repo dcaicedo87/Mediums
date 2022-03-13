@@ -1,7 +1,5 @@
 # Mediums
 
----
-
 This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums MVP](https://github.com/dcaicedo87/Mediums/wiki/MVP-Feature-List).
 
 # Index
@@ -9,8 +7,6 @@ This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums
 | [Mediums MVP](https://github.com/dcaicedo87/Mediums/wiki/MVP-Feature-List) | [Database Schema](https://github.com/dcaicedo87/Mediums/wiki/Database-Schema)
 
 # Technologies Used
-
----
 
 - JavaScript
 - React
@@ -23,8 +19,6 @@ This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums
 - Visual Studio Code
 
 # Getting Started
-
----
 
 1.  Clone this repo.
 
@@ -61,8 +55,6 @@ This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums
 10. You can use the Demo user or create an account to begin using **Mediums**
 
 # Features
-
----
 
 Logged in users can perform the following actions.
 
