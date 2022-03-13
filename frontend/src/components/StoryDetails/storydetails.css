@@ -11,7 +11,7 @@
   margin-left: 30%;
   margin-right: 30%;
   background-color: rgba(131, 106, 214, 0.2);
-  height: 110vh;
+  height: 105vh;
   /* overflow: hidden; */
 }
 
@@ -73,4 +73,20 @@
 .comment-editor-container {
   /* width: 200px; */
   /* margin-bottom: 200px; */
+}
+
+.delete-comment-button {
+  /* display: inline-block; */
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: rgb(255, 255, 255);
+  background: #ff0000;
+  line-height: 1.15;
+  font-size: 14px;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
