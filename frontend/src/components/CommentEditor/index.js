@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 // import { getStories, postStory } from "../../store/stories";
 import { postComment } from "../../store/comments";
+import "./commenteditor.css";
 
 const CommentEditor = () => {
   const dispatch = useDispatch();

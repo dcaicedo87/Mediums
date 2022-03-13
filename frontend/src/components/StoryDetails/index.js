@@ -110,7 +110,7 @@ const StoryDetails = () => {
             </div>
           ))}
         </div>
-        {addCommentBtn()}
+        <div className="comment-editor-container">{addCommentBtn()}</div>
       </div>
     </>
   );
