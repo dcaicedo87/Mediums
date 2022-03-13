@@ -2,6 +2,8 @@
 
 This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums MVP](https://github.com/dcaicedo87/Mediums/wiki/MVP-Feature-List).
 
+**Mediums** is a place where people can share their paranormal stories or encounters.
+
 # Index
 
 | [Mediums MVP](https://github.com/dcaicedo87/Mediums/wiki/MVP-Feature-List) | [Database Schema](https://github.com/dcaicedo87/Mediums/wiki/Database-Schema) |
@@ -66,3 +68,4 @@ Logged in users can perform the following actions.
 
     * Add/View/Edit/Delete Stories
     * Add/View/Delete Comments
+        *Users are allowed to post a single comment per story.
