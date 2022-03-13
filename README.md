@@ -6,6 +6,10 @@ This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums
 
 | [Mediums MVP](https://github.com/dcaicedo87/Mediums/wiki/MVP-Feature-List) | [Database Schema](https://github.com/dcaicedo87/Mediums/wiki/Database-Schema) |
 
+# Live Site
+
+- [Mediums](https://aa-mediums.herokuapp.com/)
+
 # Technologies Used
 
 - JavaScript
