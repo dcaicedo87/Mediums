@@ -37,11 +37,11 @@ function EditStory() {
 
     const newErrors = [];
 
-    if (updatedStory.body.length < 4) {
-      newErrors.push("Story must be more than 4 characters");
-    }
     if (updatedStory.title.length < 4) {
       newErrors.push("Title must be more than 4 characters");
+    }
+    if (updatedStory.body.length < 4) {
+      newErrors.push("Story must be more than 4 characters");
     }
 
     if (newErrors.length > 0) {
