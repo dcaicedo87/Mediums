@@ -1,0 +1,76 @@
+.create-story-form-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(204, 191, 208, 0.25);
+}
+
+.create-story-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .create-story-form-main-label {
+  margin-bottom: 5%;
+} */
+
+.create-story-form > label {
+  text-align: center;
+  font-size: 50px;
+  margin: 5px;
+  background-color: rgb(201, 234, 193);
+  border-radius: 10px;
+}
+
+.create-story-form > input {
+  padding: 20px 10px;
+  line-height: 5px;
+  font-size: 28px;
+  margin: 5px;
+}
+
+.create-story-form > textarea {
+  resize: none;
+  width: 500px;
+  height: 300px;
+  font-size: 18px;
+}
+
+.create-new-story-btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #fff;
+  background: #059217;
+  line-height: 4;
+  font-size: 26px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* width: 15%; */
+  align-items: center;
+}
+
+.cancel-btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #fff;
+  background: #a5055a;
+  line-height: 1;
+  font-size: 26px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 35%;
+  align-items: center;
+}

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 // import { handleValidationErrors } from "../../../../backend/utils/validation";
 import { getStories, postStory } from "../../store/stories";
+import "./createstory.css";
 
 const CreateStory = (stories) => {
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ const CreateStory = (stories) => {
   //NEED TO ADD "onSubmit={function}" for <form> line
 
   return (
-    <section className="new-form-holder centered middled">
+    <div className="create-story-form-container">
       <div className="Errors">
         <ul>
           {errors.map((err) => (
@@ -79,12 +80,15 @@ const CreateStory = (stories) => {
       <form className="create-story-form" onSubmit={handleSubmit}>
         {/* Author ID */}
         <input type="hidden" value={userId} />
+        <label className="create-story-form-main-label">Create a Story</label>
+        <label>Image Url</label>
         <input
           type="text"
           placeholder="Image URL"
           value={imageUrl}
           onChange={updateImageUrl}
         />
+        <label>Title</label>
         <input
           type="text"
           placeholder="Title"
@@ -93,18 +97,21 @@ const CreateStory = (stories) => {
           onChange={updateTitle}
           required
         />
+        <label>Story</label>
         <textarea
           type="text"
-          placeholder="Story start.."
+          placeholder="Story here.."
           value={body}
           onChange={updateBody}
         />
-        <button type="submit">Create New Story</button>
-        <button type="button" onClick={handleCancel}>
+        <button className="create-new-story-btn" type="submit">
+          Create New Story
+        </button>
+        <button className="cancel-btn" type="button" onClick={handleCancel}>
           Cancel
         </button>
       </form>
-    </section>
+    </div>
   );
 };
 
