@@ -64,6 +64,7 @@ const UserStories = () => {
             >
               {story ? <img src={`${story?.imageUrl}`} alt="storyPic" /> : null}
               <h3 className="mystories-container-card-title">{story?.title}</h3>
+              <p className="story-title">{story?.title}</p>
             </Link>
             <div className="edit-delete-btn-container">
               <button className="update-story-btn">
