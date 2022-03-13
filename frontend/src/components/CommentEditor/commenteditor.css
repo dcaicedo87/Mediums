@@ -2,8 +2,24 @@
   display: flex;
 }
 .create-comment-form > textarea {
-  /* resize: none; */
-  width: 550px;
+  resize: none;
+  width: 500px;
+  /* width: 5000%; */
   height: 50px;
   font-size: 18px;
+}
+
+.create-comment-btn {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border-radius: 500px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background-color: #15883e;
 }
