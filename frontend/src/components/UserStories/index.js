@@ -63,7 +63,7 @@ const UserStories = () => {
               style={{ textDecoration: "none" }}
             >
               {story ? <img src={`${story?.imageUrl}`} alt="storyPic" /> : null}
-              <h3>{story?.title}</h3>
+              <p className="story-title">{story?.title}</p>
             </Link>
             <div className="edit-delete-btn-container">
               <button className="update-story-btn">
