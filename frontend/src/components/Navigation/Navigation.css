@@ -40,6 +40,8 @@
 .navigation-container-login-wrapper {
   display: flex;
   margin-right: 200px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .profile-dropdown > li {
