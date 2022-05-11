@@ -13,7 +13,7 @@ const UserStories = () => {
   const user = useSelector((state) => state.session.user);
 
   const userId = user.id;
-  console.log(`userId:`, userId);
+  // console.log(`userId:`, userId);
 
   useEffect(() => {
     dispatch(getStories());
@@ -22,11 +22,11 @@ const UserStories = () => {
   const stories = useSelector((state) => state.stories);
 
   const storiesArr = Object.values(stories);
-  console.log(`The storiesArr:`, storiesArr);
+  // console.log(`The storiesArr:`, storiesArr);
 
   // LOOK AT THIS CODE BELOW TO NARROW SEARCHES BY authorId.
   const authorSearch = storiesArr.filter((story) => story.authorId === userId);
-  console.log(`AUTHOR SEARCH:`, authorSearch);
+  // console.log(`AUTHOR SEARCH:`, authorSearch);
 
   // const authorSearch = stories.forEach((story) =)
 

@@ -21,10 +21,10 @@ const StoryDetails = () => {
   }, [dispatch]);
 
   const commentsObj = useSelector((state) => state.comments);
-  console.log(`commentOBJ`, commentsObj);
+  // console.log(`commentOBJ`, commentsObj);
 
   const commentsArr = Object.values(commentsObj);
-  console.log(`commentsArr`, commentsArr);
+  // console.log(`commentsArr`, commentsArr);
 
   const storySearch = useSelector((state) => state.stories[id]);
   // console.log(`StorySerach`, storySearch);
@@ -72,7 +72,7 @@ const StoryDetails = () => {
     dispatch(deleteComment(commentId));
   };
 
-  console.log(`USER VERIFICATION`, userVerificiationSet);
+  // console.log(`USER VERIFICATION`, userVerificiationSet);
 
   let isLogged = false;
 
