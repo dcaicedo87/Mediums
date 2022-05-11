@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
         </NavLink>
       </div>
       <div className="navigation-container-login-wrapper">
-        <ul>
+        <ul className="login-items">
           <li>
             <NavLink exact to="/">
               Home

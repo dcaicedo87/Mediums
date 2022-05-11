@@ -40,8 +40,20 @@
 .navigation-container-login-wrapper {
   display: flex;
   margin-right: 200px;
+  /* flex-direction: column;
+  justify-content: center; */
+}
+
+.login-items {
+  /* display: flex !important; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+
+.profile-dropdown {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* margin-top: 20rem; */
 }
 
 .profile-dropdown > li {
