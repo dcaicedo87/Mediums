@@ -11,6 +11,7 @@
 .signup-form-validators {
   background-color: white;
   border-radius: 20px;
+  color: red;
 }
 
 .signup-form > label {
