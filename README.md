@@ -1,3 +1,5 @@
+![mainpage](https://user-images.githubusercontent.com/13339377/167958224-0292c289-6f42-4e7d-9d74-75ed3fe3690b.JPG)
+
 # Mediums
 
 This is a paranormal clone of [Medium](https://medium.com/). Access the [Mediums MVP](https://github.com/dcaicedo87/Mediums/wiki/MVP-Feature-List).
