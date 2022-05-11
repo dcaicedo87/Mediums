@@ -27,13 +27,13 @@ export const postComment = (comment) => async (dispatch) => {
     body: JSON.stringify(comment),
   });
 
-  console.log(`I GOT HERE AFTER THE FETCH`);
+  // console.log(`I GOT HERE AFTER THE FETCH`);
   let newComment;
   newComment = await response.json();
-  console.log(`newComment =`, newComment);
+  // console.log(`newComment =`, newComment);
   if (newComment.errors) return newComment.errors;
   if (newComment) {
-    console.log(`I got to the DISPATCH`);
+    // console.log(`I got to the DISPATCH`);
     dispatch(post(newComment));
     return newComment;
   }
