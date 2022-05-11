@@ -1,11 +1,15 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
+  //NEW BELOW
+  const history = useHistory();
+  //
   const [showMenu, setShowMenu] = useState(false);
 
   const currentUser = useSelector((state) => state.session.user);
@@ -37,6 +41,8 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    // NEW BELOW
+    history.push(`/`);
   };
 
   return (
