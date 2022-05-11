@@ -44,11 +44,15 @@
   justify-content: center; */
 }
 
+.login-form-errors{
+  color: red;
+}
+
 .login-items {
   /* display: flex !important; */
   /* flex-direction: column; */
   /* justify-content: center; */
-  margin: 0.4rem;
+  /* margin: 0.4rem; */
 }
 
 .profile-dropdown {

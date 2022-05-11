@@ -45,7 +45,7 @@ function ProfileButton({ user }) {
         <Link to={`/stories/author/${userId}`}>My Stories</Link>
       </button>
       <button className="profile-btn" onClick={openMenu}>
-        <i className="fas fa-user-circle fa-2x" />
+        <i className="fas fa-user-circle fa-xl" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
